@@ -1,0 +1,50 @@
+version: 2.1
+
+
+orbs:
+  python: circleci/python@2.1.1
+
+
+executors:
+  docker-executor:
+    docker:
+      - image: cimg/python:3.8.4
+    resource_class: small
+
+
+commands:
+  setup-config:
+    description: "install credentials and requirements"
+    steps:
+      - python/install-packages:
+          pkg-manager: pip
+
+
+jobs:
+  xxx-tests:
+    executor: docker-executor
+    steps:
+      - checkout
+      - setup-config
+      - run: echo $(python --version)
+      - run: echo $(pip freeze)
+      - run: python test_job.py
+
+  v2-tests:
+    executor: docker-executor
+    steps:
+      - checkout
+      - setup-config
+      - run: echo $(python --version)
+      - run: echo $(pip freeze)
+      - run: python v2_job.py
+
+
+workflows:
+  xxx-workflow:
+    jobs:
+      - xxx-tests
+
+  v2-workflow:
+    jobs:
+      - v2-tests

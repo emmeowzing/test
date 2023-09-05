@@ -2,16 +2,21 @@ version: 2.1
 
 setup: true
 
+
+executors:
+  docker-executor:
+    docker:
+      - image: cimg/python:3.8.4
+    resource_class: small
+
+
 orbs:
-  dynamic: bjd2385/dynamic-continuation@3.6.12
+  dynamic-continuation: bjd2385/dynamic-continuation@3.7.0
+
 
 workflows:
-  version: 2
-
-  default:
+  on-commit:
     jobs:
-      - dynamic/extend:
+      - dynamic-continuation/continue:
           context: orb-publishing
-          modules: |
-            .
-            scripts
+          default-branch: master
