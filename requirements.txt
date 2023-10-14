@@ -39,7 +39,7 @@ pyasn1-modules==0.2.8
 pycurl==7.45.2
 PyDispatcher==2.0.5
 pyls-spyder==0.4.0
-PyQt5-sip==12.11.0
+PyQt5-sip==12.13.0
 python-lsp-jsonrpc==1.0.0
 queuelib==1.5.0
 scikit-learn-intelex==20230426.111612
