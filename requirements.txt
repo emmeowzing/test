@@ -14,7 +14,7 @@ daal4py==2023.1.1
 datashape==0.5.4
 distlib==0.3.7
 et-xmlfile==1.1.0
-filelock==3.12.2
+filelock==3.13.1
 fonttools==4.25.0
 identify==2.5.26
 inflection==0.5.1
