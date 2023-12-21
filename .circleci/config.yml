@@ -11,7 +11,7 @@ executors:
 
 
 orbs:
-  dynamic-continuation: bjd2385/dynamic-continuation@3.7.0
+  dynamic-continuation: bjd2385/dynamic-continuation@3.8.1
 
 
 workflows:
